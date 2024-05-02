@@ -1,3 +1,15 @@
+let numOne = 1;
+let numTwo = 2;
+let operator = {
+  add: '+',
+  subtract: '-',
+  multiply: '*',
+  divide: '/'
+}
+
+
+
+
 const add = function(a, b){
   return a + b;
 }
