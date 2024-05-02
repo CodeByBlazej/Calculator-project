@@ -1,3 +1,24 @@
+const btn_0 = document.querySelector(".btn_0");
+const btn_1 = document.querySelector(".btn_1");
+const btn_2 = document.querySelector(".btn_2");
+const btn_3 = document.querySelector(".btn_3");
+const btn_4 = document.querySelector(".btn_4");
+const btn_5 = document.querySelector(".btn_5");
+const btn_6 = document.querySelector(".btn_6");
+const btn_7 = document.querySelector(".btn_7");
+const btn_8 = document.querySelector(".btn_8");
+const btn_9 = document.querySelector(".btn_9");
+
+const btnAdd = document.querySelector(".btn_+");
+const btnSubtract = document.querySelector(".btn_-");
+const btnMultiply = document.querySelector(".btn_*");
+const btnDivide = document.querySelector(".btn_/");
+const btnEquals = document.querySelector(".btn_=");
+const btnClear = document.querySelector(".clear");
+
+
+
+
 let numOne = 2;
 let numTwo = 4;
 let operator = {
