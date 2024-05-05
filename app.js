@@ -142,6 +142,8 @@ btn_9.addEventListener('click', () => {
 btnAdd.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
   } else {
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
