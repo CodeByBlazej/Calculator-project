@@ -144,41 +144,59 @@ btnAdd.addEventListener('click', () => {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
     currentValue = [];
-  } else {
+  } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
+    operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+    displayedNumberMemoryOne = Number(display.textContent);
     currentValue = [];
-    displayedNumberMemoryTwo = displayedNumberMemoryOne;
-    return selectedOperator = operator.add;
   }
+  currentValue = [];
+  displayedNumberMemoryTwo = displayedNumberMemoryOne;
+  return selectedOperator = operator.add;
 });
 
 btnSubtract.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
-  } else {
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
+  } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
+    operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
+  }
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
     return selectedOperator = operator.subtract;
-  }
 });
 
 btnMultiply.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
-  } else {
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
+  } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
+    operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
+  }  
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
     return selectedOperator = operator.multiply;
-  }
 });
 
 btnDivide.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
-  } else {
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
+  } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
+    operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
+  }
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
     return selectedOperator = operator.divide;
-  }
 });
 
 btnEquals.addEventListener('click', () => {
