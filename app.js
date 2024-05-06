@@ -32,22 +32,22 @@ let operator = {
 
 const add = function(a, b){
   let result = a + b;
-  return display.textContent = result;
+  return display.textContent = Math.round(result * 100) / 100;
 };
 
 const subtract = function(a, b){
   let result = a - b;
-  return display.textContent = result;
+  return display.textContent = Math.round(result * 100) / 100;
 };
 
 const multiply = function(a, b){
   let result = a * b;
-  return display.textContent = result;
+  return display.textContent = Math.round(result * 100) / 100;
 };
 
 const divide = function(a, b){
   let result = a / b;
-  return display.textContent = result;
+  return display.textContent = Math.round(result * 100) / 100;
 };
 
 
@@ -73,7 +73,6 @@ let currentValue = [];
 let displayedNumberMemoryOne = 0;
 let displayedNumberMemoryTwo = 0;
 let selectedOperator = '';
-// let result = 0;
 
 
 const displayValueOne = function(){
@@ -208,5 +207,8 @@ btnEquals.addEventListener('click', () => {
 btnClear.addEventListener('click', () => {
   display.textContent = '00000';
   currentValue = [];
+  displayedNumberMemoryOne = 0;
+  displayedNumberMemoryTwo = 0;
+  selectedOperator = '';
 });
 
