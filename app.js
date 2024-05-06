@@ -201,6 +201,8 @@ btnDivide.addEventListener('click', () => {
 
 btnEquals.addEventListener('click', () => {
   operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+  displayedNumberMemoryOne = Number(display.textContent);
+  currentValue = [];
 });
 
 btnClear.addEventListener('click', () => {
