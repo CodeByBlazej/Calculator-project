@@ -90,54 +90,73 @@ const displayValueOne = function(){
 
 
 btn_0.addEventListener('click', () => {
-  currentValue.push(0);
-  displayValueOne();
-  
+  if(currentValue.length < 9) {
+    currentValue.push(0);
+    displayValueOne();
+  }
 });
 
 btn_1.addEventListener('click', () => {
-  currentValue.push(1);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(1);
+    displayValueOne();
+  }
 });
 
 btn_2.addEventListener('click', () => {
-  currentValue.push(2);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(2);
+    displayValueOne();
+  }
 });
 
 btn_3.addEventListener('click', () => {
-  currentValue.push(3);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(3);
+    displayValueOne();
+  }
 });
 
 btn_4.addEventListener('click', () => {
-  currentValue.push(4);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(4);
+    displayValueOne();
+  }
 });
 
 btn_5.addEventListener('click', () => {
-  currentValue.push(5);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(5);
+    displayValueOne();
+  }
 });
 
 btn_6.addEventListener('click', () => {
-  currentValue.push(6);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(6);
+    displayValueOne();
+  }
 });
 
 btn_7.addEventListener('click', () => {
-  currentValue.push(7);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(7);
+    displayValueOne();
+  }
 });
 
 btn_8.addEventListener('click', () => {
-  currentValue.push(8);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(8);
+    displayValueOne();
+  }
 });
 
 btn_9.addEventListener('click', () => {
-  currentValue.push(9);
-  displayValueOne();
+  if(currentValue.length < 9){
+    currentValue.push(9);
+    displayValueOne();
+  }
 });
 
 
