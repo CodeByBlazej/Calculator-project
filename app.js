@@ -8,6 +8,7 @@ const btn_6 = document.querySelector(".btn_6");
 const btn_7 = document.querySelector(".btn_7");
 const btn_8 = document.querySelector(".btn_8");
 const btn_9 = document.querySelector(".btn_9");
+const btn_dot = document.querySelector(".btn_dot");
 
 const btnAdd = document.querySelector(".btnAdd");
 const btnSubtract = document.querySelector(".btnSubstract");
@@ -159,6 +160,13 @@ btn_9.addEventListener('click', () => {
   }
 });
 
+
+btn_dot.addEventListener('click', () => {
+  if(currentValue.length < 9) {
+    currentValue.push('.');
+    displayValueOne();
+  }
+})
 
 
 btnAdd.addEventListener('click', () => {
