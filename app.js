@@ -46,8 +46,12 @@ const multiply = function(a, b){
 };
 
 const divide = function(a, b){
-  let result = a / b;
-  return display.textContent = Math.round(result * 100) / 100;
+  if(a === 0 || b === 0) {
+    return display.textContent = 'lmao';
+  } else {
+    let result = a / b;
+    return display.textContent = Math.round(result * 100) / 100;
+  }
 };
 
 
