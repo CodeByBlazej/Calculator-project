@@ -33,7 +33,17 @@ let operator = {
 
 const add = function(a, b){
   let result = a + b;
-  return display.textContent = Math.round(result * 100) / 100;
+  let resultToStr = result.toString();
+
+  if(resultToStr.length > 9) {
+    let shorter = resultToStr.slice(0, 9)
+    resultToStr = Number(shorter);
+    return display.textContent = Math.round(resultToStr * 100) / 100;
+
+  } else if (resultToStr.length < 9) {
+    resultToStr = Number(resultToStr)
+    return display.textContent = Math.round(resultToStr * 100) / 100;
+  }
 };
 
 const subtract = function(a, b){
@@ -173,27 +183,27 @@ btnAdd.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
+    // currentValue = [];
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
+    // currentValue = [];
+  } 
     currentValue = [];
-  }
-  currentValue = [];
-  displayedNumberMemoryTwo = displayedNumberMemoryOne;
-  return selectedOperator = operator.add;
+    displayedNumberMemoryTwo = displayedNumberMemoryOne;
+    return selectedOperator = operator.add;
 });
 
 btnSubtract.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
+    // currentValue = [];
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
-  }
+    // currentValue = [];
+  } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
     return selectedOperator = operator.subtract;
@@ -203,12 +213,12 @@ btnMultiply.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
+    // currentValue = [];
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
-  }  
+    // currentValue = [];
+  } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
     return selectedOperator = operator.multiply;
@@ -218,12 +228,12 @@ btnDivide.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
+    // currentValue = [];
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    currentValue = [];
-  }
+    // currentValue = [];
+  } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
     return selectedOperator = operator.divide;
