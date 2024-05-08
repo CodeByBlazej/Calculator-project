@@ -33,17 +33,8 @@ let operator = {
 
 const add = function(a, b){
   let result = a + b;
-  let resultToStr = result.toString();
-
-  if(resultToStr.length > 9) {
-    let shorter = resultToStr.slice(0, 9)
-    resultToStr = Number(shorter);
-    return display.textContent = Math.round(resultToStr * 100) / 100;
-
-  } else if (resultToStr.length < 9) {
-    resultToStr = Number(resultToStr)
-    return display.textContent = Math.round(resultToStr * 100) / 100;
-  }
+  let resultDisplay = result.toString().slice(0, 9);
+  return display.textContent = Math.round(resultDisplay * 100) / 100;
 };
 
 const subtract = function(a, b){
@@ -53,7 +44,8 @@ const subtract = function(a, b){
 
 const multiply = function(a, b){
   let result = a * b;
-  return display.textContent = Math.round(result * 100) / 100;
+  let resultDisplay = result.toString().slice(0, 9);
+  return display.textContent = Math.round(resultDisplay * 100) / 100;
 };
 
 const divide = function(a, b){
