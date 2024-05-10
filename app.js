@@ -10,12 +10,12 @@ const btn_8 = document.querySelector("#btn_8");
 const btn_9 = document.querySelector("#btn_9");
 const btn_dot = document.querySelector("#btn_dot");
 
-const btnAdd = document.querySelector(".btnAdd");
-const btnSubtract = document.querySelector(".btnSubstract");
-const btnMultiply = document.querySelector(".btnMultiply");
-const btnDivide = document.querySelector(".btnDivide");
-const btnEquals = document.querySelector(".btnEquals");
-const btnClear = document.querySelector(".clear");
+const btnAdd = document.querySelector("#btnAdd");
+const btnSubtract = document.querySelector("#btnSubstract");
+const btnMultiply = document.querySelector("#btnMultiply");
+const btnDivide = document.querySelector("#btnDivide");
+const btnEquals = document.querySelector("#btnEquals");
+const btnClear = document.querySelector("#btnClear");
 
 const display = document.querySelector(".display")
 
