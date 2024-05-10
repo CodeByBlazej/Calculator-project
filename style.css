@@ -1,23 +1,23 @@
 body{
+  background-color: whitesmoke;
   margin: 0;
   padding: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  font-size: 30px;
 }
 
 .main{
   margin: 0;
-  padding: 10px;
-  background-color: aqua;
+  padding: 20px;
+  background-color: greenyellow;
   display: flex;
   flex-direction: column;
-
-  /* align-items: center; */
-  /* justify-content: center; */
-
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  /* box shadow from https://getcssscan.com/css-box-shadow-examples */
 }
 
 .display-div{
@@ -34,4 +34,73 @@ body{
   background-color: black;
   display: flex;
   flex-direction: column;
+}
+
+.first-row{
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row
+{
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.digit{
+  background-color: grey;
+  color: wheat;
+  border: none;
+  border-radius: 5px;
+  min-height: 75px;
+  min-width: 75px;
+  margin: 5px;
+}
+
+.zero,
+.dot,
+.clear,
+.divide,
+.multiply,
+.subtract,
+.add,
+.equals
+{
+  background-color: green;
+  color: wheat;
+  border: none;
+  border-radius: 5px;
+  min-height: 75px;
+  margin: 5px;
+}
+
+.zero{
+  min-width: 160px;
+}
+
+.dot,
+.clear,
+.divide,
+.multiply,
+.subtract,
+.add,
+.equals
+{
+ min-width: 75px;
+}
+
+button{
+  font-size: 20px;
+}
+
+button:active{
+  background-color: blanchedalmond;
 }
