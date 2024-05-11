@@ -10,6 +10,8 @@ const btn_8 = document.querySelector("#btn_8");
 const btn_9 = document.querySelector("#btn_9");
 const btn_dot = document.querySelector("#btn_dot");
 
+const btnDigit = document.querySelectorAll(".digit");
+
 const btnAdd = document.querySelector("#btnAdd");
 const btnSubtract = document.querySelector("#btnSubtract");
 const btnMultiply = document.querySelector("#btnMultiply");
@@ -90,6 +92,28 @@ const displayValueOne = function(){
   return display.textContent = number;
 };
 
+const pressBtn = function(number){
+  if(currentValue.length < 9){
+    currentValue.push(number);
+    displayValueOne();
+  }
+};
+  
+btnDigit.forEach(function(currentBtn){
+  currentBtn.addEventListener('click', (event) => {
+  const number = parseInt(event.target.id.split('_')[1]); 
+  pressBtn(number)
+  });
+
+});
+
+addEventListener('keydown', (event) => {
+  const number = parseInt(event.key);
+  const operator = event.key;
+  if(number >= 1 && number <= 9){
+    return pressBtn(number);
+  }   
+})
 
 
 
@@ -100,65 +124,9 @@ btn_0.addEventListener('click', () => {
   }
 });
 
-btn_1.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(1);
-    displayValueOne();
-  }
-});
-
-btn_2.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(2);
-    displayValueOne();
-  }
-});
-
-btn_3.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(3);
-    displayValueOne();
-  }
-});
-
-btn_4.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(4);
-    displayValueOne();
-  }
-});
-
-btn_5.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(5);
-    displayValueOne();
-  }
-});
-
-btn_6.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(6);
-    displayValueOne();
-  }
-});
-
-btn_7.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(7);
-    displayValueOne();
-  }
-});
-
-btn_8.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(8);
-    displayValueOne();
-  }
-});
-
-btn_9.addEventListener('click', () => {
-  if(currentValue.length < 9){
-    currentValue.push(9);
+btn_0.addEventListener('keydown', () => {
+  if(currentValue.length < 9) {
+    currentValue.push(0);
     displayValueOne();
   }
 });
@@ -176,11 +144,10 @@ btnAdd.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
+    
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
   } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
@@ -191,11 +158,10 @@ btnSubtract.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
+
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
   } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
@@ -206,11 +172,10 @@ btnMultiply.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
+
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
   } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
@@ -221,11 +186,10 @@ btnDivide.addEventListener('click', () => {
   if(selectedOperator !== ''){
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
+
   } else if (selectedOperator === '+' || selectedOperator === '-' || selectedOperator === '*' || selectedOperator === '/') {
     operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
     displayedNumberMemoryOne = Number(display.textContent);
-    // currentValue = [];
   } 
     currentValue = [];
     displayedNumberMemoryTwo = displayedNumberMemoryOne;
