@@ -65,14 +65,15 @@ body{
   margin: 5px;
 }
 
-.zero,
-.dot,
 .clear,
+.backspace,
 .divide,
 .multiply,
 .subtract,
 .add,
-.equals
+.equals,
+.dot,
+.zero
 {
   background-color: green;
   color: wheat;
@@ -82,17 +83,19 @@ body{
   margin: 5px;
 }
 
-.zero{
+.zero,
+.backspace
+{
   min-width: 160px;
 }
 
-.dot,
 .clear,
 .divide,
 .multiply,
 .subtract,
 .add,
-.equals
+.equals,
+.dot
 {
  min-width: 75px;
 }
