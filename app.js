@@ -11,11 +11,12 @@ const btn_9 = document.querySelector("#btn_9");
 const btn_dot = document.querySelector("#btn_dot");
 
 const btnAdd = document.querySelector("#btnAdd");
-const btnSubtract = document.querySelector("#btnSubstract");
+const btnSubtract = document.querySelector("#btnSubtract");
 const btnMultiply = document.querySelector("#btnMultiply");
 const btnDivide = document.querySelector("#btnDivide");
 const btnEquals = document.querySelector("#btnEquals");
 const btnClear = document.querySelector("#btnClear");
+const btnBackspace = document.querySelector("#btnBackspace");
 
 const display = document.querySelector(".display")
 
@@ -238,10 +239,16 @@ btnEquals.addEventListener('click', () => {
 });
 
 btnClear.addEventListener('click', () => {
-  display.textContent = '00000';
+  display.textContent = '0';
   currentValue = [];
   displayedNumberMemoryOne = 0;
   displayedNumberMemoryTwo = 0;
   selectedOperator = '';
+});
+
+btnBackspace.addEventListener('click', () => {
+  currentValue.pop();
+  displayedNumberMemoryOne =  Number(displayedNumberMemoryOne.toString().slice(0, -1));
+  return display.textContent = displayedNumberMemoryOne;
 });
 
