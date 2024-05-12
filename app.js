@@ -1,13 +1,5 @@
 const btn_0 = document.querySelector("#btn_0");
-const btn_1 = document.querySelector("#btn_1");
-const btn_2 = document.querySelector("#btn_2");
-const btn_3 = document.querySelector("#btn_3");
-const btn_4 = document.querySelector("#btn_4");
-const btn_5 = document.querySelector("#btn_5");
-const btn_6 = document.querySelector("#btn_6");
-const btn_7 = document.querySelector("#btn_7");
-const btn_8 = document.querySelector("#btn_8");
-const btn_9 = document.querySelector("#btn_9");
+
 const btn_dot = document.querySelector("#btn_dot");
 
 const btnDigit = document.querySelectorAll(".digit");
@@ -92,6 +84,8 @@ const displayValueOne = function(){
   return display.textContent = number;
 };
 
+
+
 const pressBtn = function(number){
   if(currentValue.length < 9){
     currentValue.push(number);
@@ -101,40 +95,41 @@ const pressBtn = function(number){
   
 btnDigit.forEach(function(currentBtn){
   currentBtn.addEventListener('click', (event) => {
-  const number = parseInt(event.target.id.split('_')[1]); 
-  pressBtn(number)
-  });
-
+  const number = parseInt(event.target.id.split('_')[1]);
+  pressBtn(number);
+  })
 });
 
 addEventListener('keydown', (event) => {
-  const number = parseInt(event.key);
-  const operator = event.key;
-  if(number >= 1 && number <= 9){
+  const key = event.key;
+  const number = parseInt(key);
+  if(number >= 0 && number <= 9){
     return pressBtn(number);
-  }   
-})
-
-
-
-btn_0.addEventListener('click', () => {
-  if(currentValue.length < 9) {
-    currentValue.push(0);
-    displayValueOne();
+  } else if(key === 'Backspace'){
+    currentValue.pop();
+    displayedNumberMemoryOne =  Number(displayedNumberMemoryOne.toString().slice(0, -1));
+    return display.textContent = displayedNumberMemoryOne;
+  } else if(key === '.'){
+    pressBtn('.')
+  } else if(key === '='){
+    operate(displayedNumberMemoryTwo, selectedOperator, displayedNumberMemoryOne);
+    displayedNumberMemoryOne = Number(display.textContent);
+    currentValue = [];
   }
 });
 
-btn_0.addEventListener('keydown', () => {
-  if(currentValue.length < 9) {
-    currentValue.push(0);
-    displayValueOne();
-  }
-});
 
 
 btn_dot.addEventListener('click', () => {
   if(currentValue.length < 9) {
     currentValue.push('.');
+    displayValueOne();
+  }
+})
+
+btn_0.addEventListener('click', () => {
+  if(currentValue.length < 9) {
+    currentValue.push(0);
     displayValueOne();
   }
 })
@@ -215,4 +210,3 @@ btnBackspace.addEventListener('click', () => {
   displayedNumberMemoryOne =  Number(displayedNumberMemoryOne.toString().slice(0, -1));
   return display.textContent = displayedNumberMemoryOne;
 });
-
